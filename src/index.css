@@ -35,6 +35,20 @@ body,
   background-image: url(./icons/pokeball.svg);
   background-size: 25%;
 }
+body,
+.app {
+  background: #f5f5f5;
+}
 
+/* ----- Header ----- */
+
+<<<<<<< HEAD
 .buttonHeader {
+||||||| merged common ancestors
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+=======
+.header {
+>>>>>>> 168eba0435a37327383aedf40964342c02e6cdf4
 }
