@@ -24,5 +24,17 @@ body,
 
 /* ----- Header ----- */
 
-.header {
+.AppHeader {
+  background-image: url(./icons/headerbckg.jpg);
+  width: 100%;
+  height: 90vh;
+}
+
+.AppLogo {
+  background-repeat: no-repeat;
+  background-image: url(./icons/pokeball.svg);
+  background-size: 25%;
+}
+
+.buttonHeader {
 }
