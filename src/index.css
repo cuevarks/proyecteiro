@@ -35,3 +35,21 @@ body,
   background-image: url(./icons/pokeball.svg);
   background-size: 25%;
 }
+
+/* BTN HOME */
+
+.BtnHome {
+  display: inline-block;
+  border-radius: 20px;
+  background-color: #c06a5e;
+  border: 2px;
+  border-color: white;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
