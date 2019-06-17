@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AppLogo from "./AppLogo";
+import Button from "./Button";
 
 class Header extends Component {
   state = {
@@ -7,11 +9,17 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="AppHeader">
+      <header className="HeaderBackground">
+        <div className="HeaderBackground-figure" />
+        <AppLogo />
         <nav>
-          <h1 className="AppLogo"> fgd</h1>
+          <ul>
+            <li>
+              <Button type="BtnNav" />
+            </li>
+          </ul>
         </nav>
-      </div>
+      </header>
     );
   }
 }
