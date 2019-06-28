@@ -1,24 +1,15 @@
 import React, { Component } from "react";
 import AppLogo from "./AppLogo";
-import Button from "./Button";
+import Nav from "./Nav";
 
 class Header extends Component {
-  state = {
-    mode: "visible"
-  };
-
   render() {
     return (
       <header className="HeaderBackground">
-        <div className="HeaderBackground-figure" />
-        <AppLogo />
-        <nav>
-          <ul>
-            <li>
-              <Button type="BtnNav" />
-            </li>
-          </ul>
-        </nav>
+        <div className="HeaderBackground-figure">
+          <AppLogo />
+          <Nav />
+        </div>
       </header>
     );
   }
