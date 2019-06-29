@@ -7,9 +7,12 @@ import { withStyles } from "@material-ui/styles";
 
 const StyledText = withStyles({
   root: {
-    color: "#2137b1",
+    color: "#212121",
     fontSize: "2.5em",
-    fontFamily: "Press Start 2P"
+    fontFamily: "'Roboto Mono', monospace",
+    position: "absolute",
+    top: "47%",
+    left: "4.9%"
   }
 })(Typography);
 
@@ -20,7 +23,7 @@ class Header extends Component {
         <div className="HeaderBackground-figure">
           <AppLogo />
           <Nav />
-          <StyledText>ALIVEVEVEVEV</StyledText>
+          <StyledText>Catch your best mood</StyledText>
           <Button />
         </div>
       </header>
