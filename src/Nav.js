@@ -14,17 +14,24 @@ const StyledTab = withStyles({
   }
 })(Tab);
 
+const StyledPaper = withStyles({
+  root: {
+    background: "transparent",
+    boxShadow: "none"
+  }
+})(Paper);
+
 class Nav extends Component {
   render() {
     return (
       <div>
-        <Paper className="Tabs">
+        <StyledPaper className="Tabs">
           <Tabs textColor="secondary" indicatorColor="primary">
             <StyledTab label={<span className="tabsLabel">HOME</span>} />
             <StyledTab label={<span className="tabsLabel">RANDOM</span>} />
             <StyledTab label={<span className="tabsLabel">ABOUT US</span>} />
           </Tabs>
-        </Paper>
+        </StyledPaper>
       </div>
     );
   }

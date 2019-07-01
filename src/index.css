@@ -23,13 +23,6 @@ body,
 }
 
 /* ----- Header ----- */
-
-.LinkBtn {
-  text-decoration: none;
-  position: absolute;
-  display: inline-block;
-}
-
 .HeaderBackground-figure {
   width: 40%;
   height: 95vh;
@@ -42,11 +35,15 @@ body,
   background-size: cover;
 }
 
+.AppHeader {
+  max-width: 4%;
+}
+
 .AppLogoIcon {
   position: absolute;
-  max-width: 4%;
   left: 30px;
-  top: 30px;
+  top: 35px;
+  height: 9%;
 }
 
 .AppLogoText {
@@ -55,26 +52,7 @@ body,
   display: inline;
   top: 32px;
   left: 110px;
-  font-size: 1.7em;
-}
-
-/* BTN HOME */
-
-.BtnHome {
-  display: inline-block;
-  border-radius: 20px;
-  background-color: #c06a5eaf;
-  border: 2px;
-  border-color: white;
-  color: #ffffff;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  opacity: 0.7;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
+  /* font-size: 1.7em; */
 }
 
 .Tabs {

@@ -13,7 +13,7 @@ const StyledButton = withStyles({
     width: "25%",
     height: "5%",
     position: "absolute",
-    top: "54%",
+    top: "56%",
     left: "5%"
   },
   containedSecondary: {

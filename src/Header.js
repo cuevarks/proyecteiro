@@ -11,7 +11,7 @@ const StyledText = withStyles({
     fontSize: "2.5em",
     fontFamily: "'Roboto Mono', monospace",
     position: "absolute",
-    top: "47%",
+    top: "45%",
     left: "4.9%"
   }
 })(Typography);
