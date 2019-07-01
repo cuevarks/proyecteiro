@@ -5,16 +5,12 @@ import { withStyles } from "@material-ui/styles";
 const StyledButton = withStyles({
   root: {
     borderRadius: 25,
-    background: "#d50000",
+    background: "#d50000d3",
     "&:hover": {
       background: "#dd3333"
     },
     // border: "2px solid #000000",
-    width: "25%",
-    height: "5%",
-    position: "absolute",
-    top: "56%",
-    left: "5%"
+    display: "flex"
   },
   containedSecondary: {
     color: "#ffffff"

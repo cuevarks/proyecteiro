@@ -21,16 +21,22 @@ const StyledPaper = withStyles({
   }
 })(Paper);
 
+const StyledContainer = withStyles({
+  textColorPrimary: {
+    color: "white"
+  }
+})(Tabs);
+
 class Nav extends Component {
   render() {
     return (
-      <div>
+      <div className="navBar">
         <StyledPaper className="Tabs">
-          <Tabs textColor="secondary" indicatorColor="primary">
+          <StyledContainer textColor="secondary" indicatorColor="primary">
             <StyledTab label={<span className="tabsLabel">HOME</span>} />
             <StyledTab label={<span className="tabsLabel">RANDOM</span>} />
             <StyledTab label={<span className="tabsLabel">ABOUT US</span>} />
-          </Tabs>
+          </StyledContainer>
         </StyledPaper>
       </div>
     );

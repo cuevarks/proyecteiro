@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class AppLogo extends Component {
   render() {
     return (
-      <div>
+      <div className="mainLogo">
         <div className="AppHeader">
           <img
             src="icons/pokeball.svg"
