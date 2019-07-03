@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
 import axios from "axios";
+import Therapists from "./components/Therapists";
 // import BtnHome from "./BtnHome";
 
 class App extends Component {
@@ -23,11 +24,11 @@ class App extends Component {
   }
 
   render() {
-    const { appData } = this.state;
+    // const { appData } = this.state;
+    // <Therapists appData={appData} />
     return (
       <div>
-        <Header />
-        {/* <Therapists appData={appData} /> */}
+        <Therapists />
       </div>
     );
   }
