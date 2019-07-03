@@ -7,8 +7,8 @@ class Header extends Component {
   render() {
     return (
       <header className="HeaderBackground">
-        <div className="HeaderBackground-figure">
-          <div className="wrapper">
+        <div className="wrapper">
+          <div className="HeaderBackground-figure">
             <AppLogo />
             <Nav />
             <LandingTextButton />
