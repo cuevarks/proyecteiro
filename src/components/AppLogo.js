@@ -10,7 +10,9 @@ class AppLogo extends Component {
             alt="Pokeball Logo"
             className="AppLogoIcon"
           />
-          <h1 className="AppLogoText">POKÉTHERAPY</h1>
+          <h1 className="AppLogoText" style={{ color: "black" }}>
+            POKÉTHERAPY
+          </h1>
         </div>
       </div>
     );

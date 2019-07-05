@@ -24,11 +24,10 @@ class App extends Component {
   }
 
   render() {
-    // const { appData } = this.state;
-    // <Therapists appData={appData} />
+    const { appData } = this.state;
     return (
       <div>
-        <Therapists />
+        <Therapists appData={appData} />
       </div>
     );
   }
