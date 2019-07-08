@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import InputBase from "@material-ui/core/InputBase";
+import IconButton from "@material-ui/core/IconButton";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import SearchIcon from "@material-ui/icons/Search";
+import ShuffleIcon from "@material-ui/icons/Shuffle";
 import Typography from "@material-ui/core/Typography";
 import { fade, withStyles } from "@material-ui/core/styles";
 import AppLogo from "./AppLogo";
 import escapeRegExp from "escape-string-regexp";
+import shuffle from "shuffle-array";
+import sortBy from "sort-by";
 
 const styles = theme => ({
   root: {
@@ -60,6 +64,12 @@ const styles = theme => ({
         width: 200
       }
     }
+  },
+  logoPosition: {
+    root: {
+      position: "absolute",
+      left: "5%"
+    }
   }
 });
 
@@ -76,7 +86,8 @@ const StyledCard = withStyles({
 
 class Therapists extends Component {
   state = {
-    query: ""
+    query: "",
+    shufflePokemon: false
   };
 
   updateQuery = query => {
@@ -86,14 +97,18 @@ class Therapists extends Component {
   render() {
     const { classes } = this.props;
     const { query } = this.state;
+
     let showingPokemon;
     if (query) {
       const match = new RegExp(escapeRegExp(query), "i");
       showingPokemon = this.props.appData.filter(pokemon =>
         match.test(pokemon.name)
       );
+    } else if (this.state.shufflePokemon) {
+      showingPokemon = shuffle(this.props.appData);
     } else {
       showingPokemon = this.props.appData;
+      showingPokemon.sort(sortBy("name"));
     }
     return (
       <div>
@@ -101,8 +116,19 @@ class Therapists extends Component {
           <AppBar position="static">
             <Toolbar>
               <Typography className={classes.title} variant="h6" noWrap>
-                <AppLogo />
+                <AppLogo className={classes.logoPosition} />
               </Typography>
+              <div>
+                <IconButton
+                  onClick={() => {
+                    this.setState({
+                      shufflePokemon: !this.state.shufflePokemon
+                    });
+                  }}
+                >
+                  <ShuffleIcon style={{ color: "#FFF" }} />
+                </IconButton>
+              </div>
               <div className={classes.search}>
                 <div className={classes.searchIcon}>
                   <SearchIcon />
