@@ -147,7 +147,7 @@ class Therapists extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div style={{ display: "flex" }}>
+        <div className="pokemonlistContainer">
           {showingPokemon.map(pokemon => (
             <StyledCard>
               <CardContent>
