@@ -5,6 +5,7 @@ import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
 import SearchIcon from "@material-ui/icons/Search";
 import ShuffleIcon from "@material-ui/icons/Shuffle";
 import Typography from "@material-ui/core/Typography";
@@ -64,6 +65,9 @@ const styles = theme => ({
         width: 200
       }
     }
+  },
+  media: {
+    height: 60
   },
   logoPosition: {
     root: {
@@ -151,6 +155,13 @@ class Therapists extends Component {
           {showingPokemon.map(pokemon => (
             <StyledCard>
               <CardContent>
+                <CardMedia
+                  className={classes.media}
+                  image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                    pokemon.url.split("/")[pokemon.url.split("/").length - 2]
+                  }.png`}
+                  title={pokemon.name}
+                />
                 <Typography>{pokemon.name}</Typography>
               </CardContent>
             </StyledCard>

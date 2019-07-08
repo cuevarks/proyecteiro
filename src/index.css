@@ -111,14 +111,22 @@ body,
 
 .pokemonlistContainer {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  padding: 5%;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+  padding: 3%;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1280px) {
+  .pokemonlistContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    padding: 3%;
+  }
+}
+
+@media screen and (max-width: 740px) {
   .pokemonlistContainer {
     display: grid;
     grid-template-columns: auto auto;
-    padding: 5%;
+    padding: 3%;
   }
 }
