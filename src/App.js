@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import axios from "axios";
 import Therapists from "./components/Therapists";
+import ChatApp from "./components/ChatApp";
 // import BtnHome from "./BtnHome";
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
     const { appData } = this.state;
     return (
       <div>
-        <Therapists appData={appData} />
+        <ChatApp />
       </div>
     );
   }
