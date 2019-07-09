@@ -54,7 +54,7 @@ body,
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "layout";
-  height: 95vh;
+  height: 100vh;
   background-image: url("/icons/hero.jpg");
   background-size: cover;
 }

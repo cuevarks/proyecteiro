@@ -28,6 +28,7 @@ class App extends Component {
     const { appData } = this.state;
     return (
       <div>
+        <Header />
         <ChatApp />
       </div>
     );

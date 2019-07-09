@@ -1,36 +1,78 @@
 import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
-import IconButton from "@material-ui/core/IconButton";
-import "../styles/chatbox.css";
+import socketio from "socket.io-client";
+import Paper from "@material-ui/core/Paper";
+import { Widget, addResponseMessage } from "react-chat-widget";
+import "react-chat-widget/lib/styles.css";
 
-class ChatApp extends Component {
+class App extends Component {
+  componentDidMount() {
+    addResponseMessage("Char char char char!");
+  }
+
+  handleNewUserMessage = newMessage => {
+    console.log(`New message incomig! ${newMessage}`);
+    // Now send the message throught the backend API
+  };
+
   state = {
     username: "",
     chatting: false,
     message: "",
-    messages: []
+    messages: [""]
   };
+
+  // componentDidMount() {
+  //   this.io.on("NEW_MESSAGE_RECEIVED", payload => {
+  //     this.setState({
+  //       messages: [...this.state.messages, payload]
+  //     });
+  //   });
+  // }
+
+  // handleNewUserMessage = (newMessage) => {
+
+  // }
+
+  startChatting = () => {
+    if (this.state.username) {
+      this.setState({ chatting: true });
+    }
+  };
+
+  setName = event => this.setState({ username: event.target.value });
+
+  // io = socketio("http://localhost");
+
+  sendMessage = () => {
+    if (this.state.message) {
+      this.state.messages.push({
+        message: this.state.message,
+        client: "speech-bubble"
+      });
+      this.setState({ message: "" });
+    }
+  };
+
+  // sendMessage = () => {
+  //   this.setState({
+  //     message: ""
+  //   });
+  //   this.io.emit("NEW_MESSAGE", {
+  //     username: this.state.username,
+  //     message: this.state.message
+  //   });
+  // };
+
   render() {
     return (
-      <div className="chatApp">
-        {/* !this.state.chatting ?
-          <div className="userName">
-         <TextField value={} onChange={} placeholder="Enter your username" type="text" />
-            <IconButton onClick={} color="secondary">Go!</IconButton>
-        </div> : */}
-
-        <div className="chatBox">
-          <ul className="messages">
-            {/* {this.state.messages.map(message => <li><b>{message.username}</b>  {message.message}</li>)} */}
-          </ul>
-          <div className="chatMessage">
-            <TextField placeholder="Send a message ...." type="text" />
-            <IconButton color="secondary">Go!</IconButton>
-          </div>
-        </div>
-      </div>
+      <Widget
+        handleNewUserMessage={this.handleNewUserMessage}
+        profileAvatar="https://pm1.narvii.com/6513/7fecd5befc22ffee6b35c186de92949dfcaf927e_hq.jpg"
+        title="Pokéchat"
+        subtitle="Pokétherapists chat space"
+      />
     );
   }
 }
 
-export default ChatApp;
+export default App;
