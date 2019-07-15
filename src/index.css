@@ -37,6 +37,10 @@ body,
   grid-area: layout;
 }
 
+.navBar {
+  grid-area: navbar;
+}
+
 /* ----- Header ----- */
 .HeaderBackground-figure {
   width: 100%;
@@ -70,10 +74,6 @@ body,
   align-self: center;
 }
 
-.navBar {
-  grid-area: navbar;
-}
-
 .LandingText {
   grid-area: buttontext;
   align-self: center;
@@ -94,6 +94,10 @@ body,
   font-family: "Press Start 2P";
   display: flex;
   font-size: 175%;
+}
+
+.chatbox {
+  width: 100%;
 }
 
 /* Nav Bar */

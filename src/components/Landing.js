@@ -3,14 +3,14 @@ import AppLogo from "./AppLogo";
 import Nav from "./Nav";
 import LandingTextButton from "./LandingTextButton";
 
-class Header extends Component {
+class Landing extends Component {
   render() {
     return (
       <header className="HeaderBackground">
         <div className="wrapper">
+          <Nav />
           <div className="HeaderBackground-figure">
             <AppLogo />
-            <Nav />
             <LandingTextButton />
           </div>
         </div>
@@ -19,4 +19,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Landing;

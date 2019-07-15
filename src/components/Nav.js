@@ -1,43 +1,27 @@
 import React, { Component } from "react";
-import { withStyles } from "@material-ui/core/styles";
-
+import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
-import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-
-const StyledTab = withStyles({
-  textColorPrimary: {
-    color: "white"
-  },
-  textColorSecondary: {
-    color: "#42DA6D"
-  }
-})(Tab);
-
-const StyledPaper = withStyles({
-  root: {
-    background: "transparent",
-    boxShadow: "none"
-  }
-})(Paper);
-
-const StyledContainer = withStyles({
-  textColorPrimary: {
-    color: "white"
-  }
-})(Tabs);
+import Tabs from "@material-ui/core/Tabs";
+import { Link } from "react-router-dom";
 
 class Nav extends Component {
   render() {
     return (
-      <div className="navBar">
-        <StyledPaper className="Tabs">
-          <StyledContainer textColor="secondary" indicatorColor="primary">
-            <StyledTab label={<span className="tabsLabel">HOME</span>} />
-            <StyledTab label={<span className="tabsLabel">RANDOM</span>} />
-            <StyledTab label={<span className="tabsLabel">ABOUT US</span>} />
-          </StyledContainer>
-        </StyledPaper>
+      <div position="static" className="navBar">
+        <Paper style={{ backgroundColor: "rgba(66, 218, 109, 0.739)" }}>
+          <Tabs textColor="#000000" variant="fullWidth">
+            <Link to="/">
+              <Tab label="Home" />
+            </Link>
+            <Link to="/therapists">
+              <Tab label="Therapists" />
+            </Link>
+            <Link to="/chat">
+              <Tab label="Chat" />
+            </Link>
+          </Tabs>
+        </Paper>
       </div>
     );
   }
