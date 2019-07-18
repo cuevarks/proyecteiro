@@ -5,7 +5,6 @@ import Therapists from "./components/Therapists";
 import ChatApp from "./components/ChatApp";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import BtnHome from "./BtnHome";
 
 class App extends Component {
   state = {

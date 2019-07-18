@@ -10,14 +10,17 @@ class Nav extends Component {
     return (
       <div position="static" className="navBar">
         <Paper style={{ backgroundColor: "rgba(66, 218, 109, 0.739)" }}>
-          <Tabs textColor="#000000" variant="fullWidth">
-            <Link to="/">
+          <Tabs>
+            <Link to="/" style={{ textDecoration: "none", color: "#000" }}>
               <Tab label="Home" />
             </Link>
-            <Link to="/therapists">
+            <Link
+              to="/therapists"
+              style={{ textDecoration: "none", color: "#000" }}
+            >
               <Tab label="Therapists" />
             </Link>
-            <Link to="/chat">
+            <Link to="/chat" style={{ textDecoration: "none", color: "#000" }}>
               <Tab label="Chat" />
             </Link>
           </Tabs>
