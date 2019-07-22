@@ -13,4 +13,14 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.post("/postmessages", (req, res) => {
+  try {
+    let message = req.body;
+    chatDB.insert(message);
+    res.send(message);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

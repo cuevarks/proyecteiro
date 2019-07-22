@@ -14,6 +14,8 @@ import AppLogo from "./AppLogo";
 import escapeRegExp from "escape-string-regexp";
 import shuffle from "shuffle-array";
 import sortBy from "sort-by";
+import ChatIcon from "@material-ui/icons/ChatBubble";
+import ChatBox from "./ChatApp";
 
 const styles = theme => ({
   root: {
@@ -91,7 +93,8 @@ const StyledCard = withStyles({
 class Therapists extends Component {
   state = {
     query: "",
-    shufflePokemon: false
+    shufflePokemon: false,
+    opened: false
   };
 
   updateQuery = query => {
@@ -163,6 +166,13 @@ class Therapists extends Component {
                   title={pokemon.name}
                 />
                 <Typography>{pokemon.name}</Typography>
+                <IconButton
+                  onClick={() => {
+                    window.location = "http://localhost:3001/chat";
+                  }}
+                >
+                  <ChatIcon />
+                </IconButton>
               </CardContent>
             </StyledCard>
           ))}
