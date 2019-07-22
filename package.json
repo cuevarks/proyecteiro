@@ -3,15 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "escape-string-regexp": "^2.0.0",
+    "material-ui-chat": "^0.1.0",
+    "ml-react-chatbot": "^0.4.8",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
     "react": "^16.8.6",
+    "react-chat-widget": "^2.1.4-1",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-simple-chatbot": "^0.6.1",
+    "rechatbot": "^0.1.7",
+    "shuffle-array": "^1.0.1",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "sort-by": "^1.2.0",
+    "stream-chat-react": "^0.6.10",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "nodemon src/server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

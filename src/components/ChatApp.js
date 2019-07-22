@@ -1,82 +1,67 @@
 import React, { Component } from "react";
-import ChatBot from "ml-react-chatbot";
 import axios from "axios";
+import { Widget, addResponseMessage } from "react-chat-widget";
+import shuffle from "shuffle-array";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-class ChatApp extends Component {
+import "react-chat-widget/lib/styles.css";
+
+class ChatBox extends Component {
   state = {
-    messages: [],
-    steps: []
+    messages: []
   };
 
   componentDidMount() {
-    this.getMessages();
-  }
-
-  async getMessages() {
     axios
       .get("http://localhost:3000/chat")
       .then(response => {
         const messages = response.data;
-        messages.map(message =>
-          this.setState({ messages: [...this.state.messages, message.content] })
-        );
+        this.setState({ messages: shuffle(messages.map(this.mapMessage)) });
       })
       .catch(error => {
         console.error(error);
       });
+
+    addResponseMessage(
+      "I'm Charmander, your current Pokétherapist. Hopefully you'll laugh a bit with some of my words. Everyone deserves to be happy!"
+    );
   }
 
-  generateSteps(arrayMessages) {
-    arrayMessages.forEach();
+  mapMessage(item) {
+    let messages = item.content;
+    return messages;
   }
+
+  handleNewUserMessage = newMessage => {
+    console.log(`New message incoming! ${newMessage}`);
+    // Now send the message throught the backend API
+    let random = Math.floor(Math.random() * 7 + 1);
+    addResponseMessage(this.state.messages[random]);
+  };
 
   render() {
-    return (
-      <div>
-        <ChatBot width="100%" steps={steps} />
-      </div>
-    );
+    if (this.state.messages.length > 0) {
+      return (
+        console.log(this.state.messages),
+        (
+          <div>
+            <Widget
+              profileAvatar="https://pm1.narvii.com/6513/7fecd5befc22ffee6b35c186de92949dfcaf927e_hq.jpg"
+              title="Charmander"
+              subtitle="Pokéchat"
+              handleNewUserMessage={this.handleNewUserMessage}
+            />
+          </div>
+        )
+      );
+    } else {
+      return (
+        <div>
+          <CircularProgress color="primary" />
+        </div>
+      );
+    }
   }
 }
 
-export default ChatApp;
-// import React, { Component } from "react";
-// import ChatBot from "react-simple-chatbot";
-// import "react-chat-widget/lib/styles.css";
-// import axios from "axios";
-
-// class App extends Component {
-//   componentDidMount() {
-//     // this.getMessages();
-//   }
-
-//   // "https://pm1.narvii.com/6513/7fecd5befc22ffee6b35c186de92949dfcaf927e_hq.jpg"
-//   state = {
-//     username: "",
-//     chatting: false,
-//     message: "",
-//     messages: [
-//       {
-//         id: "0",
-//         message: "Welcome to react chatbot!",
-//         trigger: "1"
-//       },
-//       {
-//         id: "1",
-//         message: "Bye!",
-//         end: true
-//       }
-//     ]
-//   };
-
-//   render() {
-//     return (
-//       <div>
-//         <ChatBot steps={this.state.messages} />
-//       </div>
-//     );
-//   }
-
-// }
-
-// export default App;
+export default ChatBox;

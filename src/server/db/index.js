@@ -10,7 +10,7 @@ let chatroomdb = {};
 
 chatroomdb.all = () => {
   return new Promise((resolve, reject) => {
-    connection.query("SELECT content FROM responses;", function(
+    connection.query("SELECT content FROM responses ORDER BY RAND();", function(
       error,
       results,
       fields
