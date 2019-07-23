@@ -25,7 +25,7 @@ class ChatBox extends Component {
       });
 
     addResponseMessage(
-      "I'm Charmander, your current Pokétherapist. Hopefully you'll laugh a bit with some of my words. Everyone deserves to be happy!"
+      `I'm your current Pokétherapist. Hopefully you'll laugh a bit with some of my words. Everyone deserves to be happy!`
     );
   }
 
@@ -59,10 +59,10 @@ class ChatBox extends Component {
         <div>
           <Widget
             profileAvatar="https://pm1.narvii.com/6513/7fecd5befc22ffee6b35c186de92949dfcaf927e_hq.jpg"
-            title="Charmander"
             subtitle="Pokéchat"
             handleNewUserMessage={this.handleNewUserMessage}
             fullScreenMode
+            title={this.props.title}
           />
         </div>
       );

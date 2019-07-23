@@ -16,6 +16,7 @@ import shuffle from "shuffle-array";
 import sortBy from "sort-by";
 import ChatIcon from "@material-ui/icons/ChatBubble";
 import ChatBox from "./ChatApp";
+import CardHeader from "@material-ui/core/CardHeader";
 
 const styles = theme => ({
   root: {
@@ -69,7 +70,8 @@ const styles = theme => ({
     }
   },
   media: {
-    height: 60
+    height: 150,
+    width: 150
   },
   logoPosition: {
     root: {
@@ -81,20 +83,26 @@ const styles = theme => ({
 
 const StyledCard = withStyles({
   root: {
-    display: "flex",
+    display: "grid",
     margin: "5px",
-    boxShadow: "5px"
+    boxShadow: "5px",
+    justifyContent: "center"
   },
   card: {
-    maxWidth: 345
+    maxWidth: 250
   }
 })(Card);
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 class Therapists extends Component {
   state = {
     query: "",
     shufflePokemon: false,
-    opened: false
+    opened: false,
+    pokeName: ""
   };
 
   updateQuery = query => {
@@ -133,7 +141,7 @@ class Therapists extends Component {
                     });
                   }}
                 >
-                  <ShuffleIcon style={{ color: "#FFF" }} />
+                  <ShuffleIcon color="primary.contrastText" />
                 </IconButton>
               </div>
               <div className={classes.search}>
@@ -156,26 +164,38 @@ class Therapists extends Component {
         </div>
         <div className="pokemonlistContainer">
           {showingPokemon.map(pokemon => (
-            <StyledCard>
-              <CardContent>
+            <div>
+              <StyledCard>
+                <CardHeader
+                  action={
+                    <IconButton
+                      onClick={() => {
+                        this.setState({
+                          opened: true,
+                          pokeName: capitalizeFirstLetter(pokemon.name)
+                        });
+                      }}
+                    >
+                      <ChatIcon />
+                    </IconButton>
+                  }
+                  title={capitalizeFirstLetter(pokemon.name)}
+                  titleTypographyProps={{ variant: "h6" }}
+                />
                 <CardMedia
+                  component="img"
                   className={classes.media}
                   image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                     pokemon.url.split("/")[pokemon.url.split("/").length - 2]
                   }.png`}
-                  title={pokemon.name}
+                  title={capitalizeFirstLetter(pokemon.name)}
                 />
-                <Typography>{pokemon.name}</Typography>
-                <IconButton
-                  onClick={() => {
-                    window.location = "http://localhost:3001/chat";
-                  }}
-                >
-                  <ChatIcon />
-                </IconButton>
-              </CardContent>
-            </StyledCard>
+              </StyledCard>
+            </div>
           ))}
+        </div>
+        <div>
+          {this.state.opened ? <ChatBox title={this.state.pokeName} /> : null}
         </div>
       </div>
     );

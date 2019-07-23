@@ -114,23 +114,46 @@ body,
 }
 
 .pokemonlistContainer {
+  background-image: url("/icons/hero.jpg");
+  background-size: cover;
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   padding: 3%;
+  grid-gap: 5px;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1495px) {
   .pokemonlistContainer {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     padding: 3%;
+    grid-gap: 5px;
   }
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 1440px) {
+  .pokemonlistContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 3%;
+    grid-gap: 5px;
+  }
+}
+
+@media screen and (max-width: 770px) {
   .pokemonlistContainer {
     display: grid;
     grid-template-columns: auto auto;
     padding: 3%;
+    grid-gap: 5px;
   }
+}
+.contactContainer {
+  background-image: url("https://i.pinimg.com/originals/4d/88/2f/4d882f7b39d60f7ab881245e7da08980.png");
+  background-repeat: repeat;
+}
+.contactFigure {
+  width: 100%;
+  height: 100%;
+  background: rgba(66, 218, 109, 0.739);
 }
