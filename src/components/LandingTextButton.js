@@ -16,7 +16,12 @@ class LandingTextButton extends Component {
     return (
       <div className="LandingText">
         <StyledText>Catch your best mood</StyledText>
-        {/* <Button /> */}
+        <div className="LandingText">
+          <a style={{ textDecoration: "none" }} href="/therapists">
+            {" "}
+            <Button fullWdith />
+          </a>{" "}
+        </div>
       </div>
     );
   }

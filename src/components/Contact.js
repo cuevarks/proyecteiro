@@ -39,19 +39,31 @@ class Contact extends Component {
     return (
       <div className="grid-container">
         <PokeAppBar className="navBar" />
-        <Card
-          style={{ backgroundColor: "rgba(66, 218, 109, 0.739)" }}
+        <div
           className="contactTitle"
+          style={{ paddingRight: "40px", paddingLeft: "5px" }}
         >
-          <CardContent>
-            <Typography align="center" variant="h3" component="h2" gutterBottom>
-              Contact us
-              <Typography gutterBottom>
-                All of our pokémon will be more than happy to asist you!
+          <Card
+            style={{
+              backgroundColor: "rgba(66, 218, 109, 0.739)",
+              width: "56%"
+            }}
+          >
+            <CardContent>
+              <Typography
+                align="center"
+                variant="h3"
+                component="h2"
+                gutterBottom
+              >
+                Contact us
+                <Typography gutterBottom>
+                  All of our pokémon will be more than happy to asist you!
+                </Typography>
               </Typography>
-            </Typography>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
         <Card className="contactInfo">
           <CardContent className="contactContent">
             <form>

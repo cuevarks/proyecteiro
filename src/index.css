@@ -31,9 +31,9 @@ body,
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1.2fr 0.3fr;
-  grid-template-rows: 0.1fr 0.2fr 2.7fr;
-  grid-template-areas: "figure . . ." "figure . navbar ." "figure . . .";
+  grid-template-columns: 0.3fr 1.6fr 1.2fr 1.7fr 0.3fr;
+  grid-template-rows: 0.2fr 0.3fr 0.6fr 2.9fr 1fr;
+  grid-template-areas: "HeaderBackground-figure HeaderBackground-figure . . ." "HeaderBackground-figure HeaderBackground-figure . navbar ." "HeaderBackground-figure HeaderBackground-figure . . ." "HeaderBackground-figure HeaderBackground-figure . paperText ." "HeaderBackground-figure HeaderBackground-figure . . .";
   grid-area: layout;
 }
 
@@ -47,10 +47,10 @@ body,
   height: 100%;
   background: rgba(66, 218, 109, 0.739);
   display: grid;
-  grid-template-columns: 0.4fr 2.2fr 0.4fr;
-  grid-template-rows: 0.2fr 0.4fr 1.4fr 2.5fr 0.5fr;
-  grid-template-areas: ". . ." ". logo ." ". . ." ". buttontext ." ". . .";
-  grid-area: figure;
+  grid-template-columns: 0.3fr 2.6fr 0.1fr;
+  grid-template-rows: 0.2fr 0.3fr 1.2fr 1.7fr 1.7fr;
+  grid-template-areas: ". . ." ". logo ." ". . ." ". LandingTextButton ." ". . .";
+  grid-area: HeaderBackground-figure;
 }
 
 .HeaderBackground {
@@ -63,9 +63,13 @@ body,
   background-size: cover;
 }
 
+.landingButton {
+  width: 100%;
+}
+
 .LandingText {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-flow: column wrap;
 }
 
@@ -75,8 +79,12 @@ body,
 }
 
 .LandingText {
-  grid-area: buttontext;
+  grid-area: LandingTextButton;
   align-self: center;
+}
+
+.paperText {
+  grid-area: paperText;
 }
 
 .AppHeader {
@@ -169,7 +177,6 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(66, 218, 109, 0.739);
 }
 
 .contactInfo {

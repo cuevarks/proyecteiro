@@ -132,13 +132,13 @@ class Therapists extends Component {
         }}
       >
         <div style={{ opacity: "0.98" }} className={classes.root}>
-          <PokeAppBar position="static" />
           <AppBar
             position="static"
             style={{
               backgroundColor: "rgba(66, 218, 109, 0.9)"
             }}
           >
+            <PokeAppBar position="static" />
             <Toolbar
               style={{
                 display: "flex",

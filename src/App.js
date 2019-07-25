@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("http://pokeapi.co/api/v2/pokemon/?limit=811")
+      .get("http://pokeapi.co/api/v2/pokemon/?limit=20")
       .then(response => {
         const appData = response.data.results;
         this.setState({
