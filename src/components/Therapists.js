@@ -4,13 +4,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import SearchIcon from "@material-ui/icons/Search";
 import ShuffleIcon from "@material-ui/icons/Shuffle";
-import Typography from "@material-ui/core/Typography";
 import { fade, withStyles } from "@material-ui/core/styles";
-import AppLogo from "./AppLogo";
+import PokeAppBar from ".//PokeAppBar";
 import escapeRegExp from "escape-string-regexp";
 import shuffle from "shuffle-array";
 import sortBy from "sort-by";
@@ -126,13 +124,27 @@ class Therapists extends Component {
       showingPokemon.sort(sortBy("name"));
     }
     return (
-      <div>
-        <div className={classes.root}>
-          <AppBar position="static">
-            <Toolbar>
-              <Typography className={classes.title} variant="h6" noWrap>
-                <AppLogo className={classes.logoPosition} />
-              </Typography>
+      <div
+        style={{
+          backgroundImage:
+            "url(http://shirtigo.co/wp-content/uploads/2013/10/troubleinthetallgrass.jpg)",
+          backgroundRepeat: "repeat"
+        }}
+      >
+        <div style={{ opacity: "0.98" }} className={classes.root}>
+          <PokeAppBar position="static" />
+          <AppBar
+            position="static"
+            style={{
+              backgroundColor: "rgba(66, 218, 109, 0.9)"
+            }}
+          >
+            <Toolbar
+              style={{
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
               <div>
                 <IconButton
                   onClick={() => {
@@ -144,7 +156,10 @@ class Therapists extends Component {
                   <ShuffleIcon color="primary.contrastText" />
                 </IconButton>
               </div>
-              <div className={classes.search}>
+              <div
+                style={{ width: "20%", backgroundColor: "#FFFF" }}
+                className={classes.search}
+              >
                 <div className={classes.searchIcon}>
                   <SearchIcon />
                 </div>

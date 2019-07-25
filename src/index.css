@@ -114,8 +114,6 @@ body,
 }
 
 .pokemonlistContainer {
-  background-image: url("/icons/hero.jpg");
-  background-size: cover;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   padding: 3%;
@@ -149,18 +147,14 @@ body,
   }
 }
 
-/* <img
-          alt="Snorlax"
-          src="https://vignette.wikia.nocookie.net/misdreavous525sofficialtppage/images/1/11/Snorlax_Dream_World.png/revision/latest?cb=20121228000315"
-        /> */
-
 .grid-container {
   display: grid;
   grid-template-columns: 0.3fr 0.9fr 2.4fr 1fr 0.4fr;
-  grid-template-rows: 0.3fr 0.5fr 0.4fr 1.2fr 0.1fr 4.1fr 0.4fr;
+  grid-template-rows: 0.1fr 0.5fr 0.4fr 1.6fr 0.1fr 5.1fr 11vh;
   grid-template-areas: "navbar navbar navbar navbar navbar" "navbar navbar navbar navbar navbar" ". . . . ." ". contactTitle contactTitle contactTitle ." ". . . . ." ". . contactInfo . ." ". . . . .";
-  background: linear-gradient(rgba(6, 51, 55, 0.924), rgba(6, 51, 55, 0.924)),
-    url("https://i.pinimg.com/originals/4d/88/2f/4d882f7b39d60f7ab881245e7da08980.png");
+  background: linear-gradient(rgba(66, 218, 109, 0.4), rgba(66, 218, 109, 0.4)),
+    url("http://pokecompany.com/wp-content/uploads/2016/05/Melemele.jpg");
+  grid-gap: 1%;
 }
 
 .navbar {
@@ -185,7 +179,6 @@ body,
 .contactContent {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
 }
 
