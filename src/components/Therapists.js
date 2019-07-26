@@ -100,7 +100,8 @@ class Therapists extends Component {
     query: "",
     shufflePokemon: false,
     opened: false,
-    pokeName: ""
+    pokeName: "",
+    pic: ""
   };
 
   updateQuery = query => {
@@ -128,7 +129,9 @@ class Therapists extends Component {
         style={{
           backgroundImage:
             "url(http://shirtigo.co/wp-content/uploads/2013/10/troubleinthetallgrass.jpg)",
-          backgroundRepeat: "repeat"
+          backgroundRepeat: "repeat",
+          position: "relative",
+          minHeight: "-webkit-fill-available"
         }}
       >
         <div style={{ opacity: "0.98" }} className={classes.root}>
@@ -177,37 +180,46 @@ class Therapists extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div className="pokemonlistContainer">
-          {showingPokemon.map(pokemon => (
-            <div>
-              <StyledCard>
-                <CardHeader
-                  action={
-                    <IconButton
-                      onClick={() => {
-                        this.setState({
-                          opened: true,
-                          pokeName: capitalizeFirstLetter(pokemon.name)
-                        });
-                      }}
-                    >
-                      <ChatIcon />
-                    </IconButton>
-                  }
-                  title={capitalizeFirstLetter(pokemon.name)}
-                  titleTypographyProps={{ variant: "h6" }}
-                />
-                <CardMedia
-                  component="img"
-                  className={classes.media}
-                  image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                    pokemon.url.split("/")[pokemon.url.split("/").length - 2]
-                  }.png`}
-                  title={capitalizeFirstLetter(pokemon.name)}
-                />
-              </StyledCard>
-            </div>
-          ))}
+        <div
+          style={{
+            backgroundImage:
+              "url(http://shirtigo.co/wp-content/uploads/2013/10/troubleinthetallgrass.jpg)",
+            backgroundRepeat: "repeat",
+            backgroundSize: "auto"
+          }}
+        >
+          <div className="pokemonlistContainer">
+            {showingPokemon.map(pokemon => (
+              <div>
+                <StyledCard>
+                  <CardHeader
+                    action={
+                      <IconButton
+                        onClick={() => {
+                          this.setState({
+                            opened: true,
+                            pokeName: capitalizeFirstLetter(pokemon.name)
+                          });
+                        }}
+                      >
+                        <ChatIcon />
+                      </IconButton>
+                    }
+                    title={capitalizeFirstLetter(pokemon.name)}
+                    titleTypographyProps={{ variant: "h6" }}
+                  />
+                  <CardMedia
+                    component="img"
+                    className={classes.media}
+                    image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                      pokemon.url.split("/")[pokemon.url.split("/").length - 2]
+                    }.png`}
+                    title={capitalizeFirstLetter(pokemon.name)}
+                  />
+                </StyledCard>
+              </div>
+            ))}
+          </div>
         </div>
         <div>
           {this.state.opened ? <ChatBox title={this.state.pokeName} /> : null}

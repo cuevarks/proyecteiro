@@ -35,7 +35,7 @@ class ChatBox extends Component {
   }
 
   handleNewUserMessage = newMessage => {
-    let randomTime = Math.floor(Math.random() * 4000 + 3000);
+    let randomTime = Math.floor(Math.random() * 2500 + 1000);
     let random = Math.floor(Math.random() * 7 + 1);
     let messsage = this.state.messages[random];
     let sendingObject = { content: newMessage };
@@ -58,7 +58,6 @@ class ChatBox extends Component {
       return (
         <div>
           <Widget
-            profileAvatar="https://pm1.narvii.com/6513/7fecd5befc22ffee6b35c186de92949dfcaf927e_hq.jpg"
             subtitle="Pokéchat"
             handleNewUserMessage={this.handleNewUserMessage}
             fullScreenMode

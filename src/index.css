@@ -80,11 +80,18 @@ body,
 
 .LandingText {
   grid-area: LandingTextButton;
+  align-items: center;
   align-self: center;
 }
 
 .paperText {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   grid-area: paperText;
+  flex-direction: column;
+  padding-left: 35px;
+  opacity: 0.9;
 }
 
 .AppHeader {
@@ -126,6 +133,9 @@ body,
   grid-template-columns: auto auto auto auto auto auto;
   padding: 3%;
   grid-gap: 5px;
+  background-image: url("http://shirtigo.co/wp-content/uploads/2013/10/troubleinthetallgrass.jpg");
+  background-repeat: repeat;
+  background-size: auto;
 }
 
 @media screen and (max-width: 1495px) {

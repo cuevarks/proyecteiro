@@ -5,7 +5,7 @@ import Therapists from "./components/Therapists";
 import ChatApp from "./components/ChatApp";
 import Contact from "./components/Contact";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("http://pokeapi.co/api/v2/pokemon/?limit=20")
+      .get("http://pokeapi.co/api/v2/pokemon/?limit=151")
       .then(response => {
         const appData = response.data.results;
         this.setState({
