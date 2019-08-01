@@ -9,7 +9,6 @@ const StyledButton = withStyles({
     "&:hover": {
       background: "#dd3333"
     },
-    // border: "2px solid #000000",
     display: "flex"
   },
   containedSecondary: {

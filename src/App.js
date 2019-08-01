@@ -4,6 +4,7 @@ import axios from "axios";
 import Therapists from "./components/Therapists";
 import ChatApp from "./components/ChatApp";
 import Contact from "./components/Contact";
+import themePalette from "../src/styles/themePalette";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -28,25 +29,7 @@ class App extends Component {
 
   render() {
     const { appData } = this.state;
-    const theme = createMuiTheme({
-      palette: {
-        primary: {
-          light: "#7fff9e",
-          main: "#44da6e",
-          dark: "#00a740",
-          contrastText: "#000000"
-        },
-        secondary: {
-          light: "#198036",
-          main: "#52b062",
-          dark: "#00520a",
-          contrastText: "#ffffff"
-        }
-      },
-      status: {
-        danger: "red"
-      }
-    });
+    const theme = createMuiTheme(themePalette);
     return (
       <div>
         <MuiThemeProvider theme={theme}>
